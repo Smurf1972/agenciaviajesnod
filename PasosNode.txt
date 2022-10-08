@@ -1,0 +1,37 @@
+crear carpeta agenciaviajesnode
+npm init
+npm install express (Dependencia se necesita publicar en produccion "dependencies")
+
+npm install --save-dev nodemon (Dependencia solo se necesita mientras el Desarrollo "devDependencies") guarda en el editor y muestra inmediato cambios, 
+para no estar parando y reiniciando la terminal, solo se necesita en desarrollo , para reiniciar el servidor 
+mientras se hacen cambios en el codigo
+
+index.js
+const express = require('express');
+
+const app = express();
+// Definir puerto
+const port = process.env.port || 4000;
+
+app.listen(port, () => {
+    console.log(`El servidor está funcionando en el puerto ${ port }`);
+});
+
+en el archivo package.json se reemplaza la linea
+   "test": "echo \"Error: no test specified\" && exit 1"
+por
+"dev":"nodemon index.js"
+
+vamos a la linea del terminal y escribimos:
+ npm run dev
+
+//Versión common js - en el archivo package.json se adiciona la linea "type": "commonjs"
+//const express = require('express'); igual
+////Versión import - en el archivo package.json se adiciona la linea "type": "module"
+import { Express } from 'express';
+
+  },
+  "type": "module",
+  "author": "Smurf",
+
+
